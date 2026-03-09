@@ -1,5 +1,7 @@
 # Pioneer DDJ-WeGO3 — Mapping para Mixxx
 
+> 🌐 **Español** · [English](README.en.md) · [Français](README.fr.md) · [中文](README.zh.md)
+
 ## Instalación
 
 Copia o crea un enlace simbólico de los archivos `Pioneer-DDJ-WeGO3-scripts.js` y `Pioneer-DDJ-WeGO3.midi.xml` en tu [carpeta de mappings de controlador](http://mixxx.org/wiki/doku.php/controller_mapping_file_locations).
