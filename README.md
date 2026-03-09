@@ -1,141 +1,175 @@
-# Mixxx MIDI map and script for Pioneer DDJ-WeGO3
+# Pioneer DDJ-WeGO3 — Mapping para Mixxx
 
-## Installation
+## Instalación
 
-Copy or symlink the `Pioneer-DDJ-WeGO3-scripts.js` and `Pioneer-DDJ-WeGO3.midi.xml` file to your [user controller mapping folder](http://mixxx.org/wiki/doku.php/controller_mapping_file_locations).
+Copia o crea un enlace simbólico de los archivos `Pioneer-DDJ-WeGO3-scripts.js` y `Pioneer-DDJ-WeGO3.midi.xml` en tu [carpeta de mappings de controlador](http://mixxx.org/wiki/doku.php/controller_mapping_file_locations).
 
-In Mixxx, go to Preferences, Controllers, and select the first instance of `PIONEER DDJ-WeGO3` (the MIDI controller, not the HID controller).
+En Mixxx, ve a **Preferencias → Controladores** y selecciona la primera instancia de `PIONEER DDJ-WeGO3` (el controlador MIDI, no el HID).
 
-Enable the controller.
+Activa el controlador, abre el menú **Cargar Preset** y selecciona **"Pioneer DDJ-WeGO3 (Enhanced)"**.
 
-Open the Load Preset menu and scroll to the bottom. Select "Pioneer DDJ-WeGO3" to load the mapping. *If you see it twice, select the second one — the first one may be automatically created by Mixxx.*
+---
 
-You can check the Input Mappings and Scripts tab to verify that everything loaded.
+## Controles
 
-Click OK and you should now be able to use your controller with Mixxx!
+### Transporte
 
-## Controls & Features
+| Control | Función |
+|---------|---------|
+| `PLAY` | Reproducir / Pausar |
+| `SHIFT + PLAY` | Efecto de frenado (Brake) |
+| `CUE` | Cue por defecto (mantener para preescuchar) |
+| `SHIFT + CUE` | Ir al inicio de la pista |
 
-### Virtual Deck Support
+### Sync y Slip
 
-On the left, switch between controlling deck 1 and 3 by pressing `SHIFT + HEADPHONE SELECT A`; likewise, switch between deck 2 and 4 on the right using `SHIFT + HEADPHONE SELECT B`.
+| Control | Función |
+|---------|---------|
+| `SYNC` | Activar / Desactivar sincronización de BPM |
+| `SHIFT + SYNC` | Activar / Desactivar modo Slip |
 
-Note: currently the only way to see which deck is active, without moving any controls, is to use the `HEADPHONE SELECT A` and `HEADPHONE SELECT B` headphone cue buttons and see which on-screen deck responds.
+### Jog Wheels
 
-### Slip mode and play/cue/crossfade protection
+| Control | Función |
+|---------|---------|
+| Superficie del plato (touch) | Scratch |
+| Anillo exterior del plato | Nudge (ajuste de pitch) |
 
-Turn slip mode on and off by pressing `SHIFT + SYNC`.
+El scratch está activado por defecto en todos los decks. Al soltar el plato se ignora el movimiento residual durante 200ms para evitar backspin accidental.
 
-The `SYNC` LED will turn on to indicate that you are in non-slip mode.
+### EQ y Faders
 
-Slip mode is turned on for all decks by default at startup.
+| Control | Función |
+|---------|---------|
+| `HI` | Ecualización de agudos (filterHigh) |
+| `MID` | Ecualización de medios (filterMid) |
+| `LOW` | Ecualización de graves (filterLow) |
+| Fader de canal | Volumen del canal |
+| Crossfader | Mezcla entre Deck A y Deck B |
+| Tempo slider | Control de velocidad (rate) |
 
-By default, slip mode also turns on certain protections to prevent against unwanted bumps while working with the DDJ-WeGO3's physical layout:
+Los knobs EQ utilizan resolución de 14-bit (MSB + LSB) con curva no lineal (rango 0.0 – 4.0).
 
-- `CROSSFADER` only works when slip mode is off for both active decks.
-- `PLAY` and `CUE` will not stop a playing deck if the deck is audible (deck volume is > 0).
+### Efectos (FX)
 
-### Transport
+#### Botones FX
 
-- `PLAY` and `CUE` work as intended, subject to the protections listed above.
+| Control | Función |
+|---------|---------|
+| `FX1` | Activar / Desactivar Effect Unit 1 en el deck |
+| `FX2` | Activar / Desactivar Effect Unit 2 en el deck |
+| `FX3` | Activar / Desactivar Effect Unit 3 en el deck |
 
-- `SHIFT + PLAY` will trigger a turntable-style brake.
+Los botones FX del lado izquierdo controlan las unidades de efecto sobre el Deck A, los del lado derecho sobre el Deck B.
 
-- `SHIFT + CUE`, while held, will censor (1x backspin in slip mode).
+#### Intensidad de Efectos (SHIFT + EQ Knobs)
 
-### Sync
+Mantén presionado `SHIFT` y gira los knobs de EQ para controlar la intensidad (`meta`) de cada efecto individual:
 
-- `SYNC` button turns on/off sync for the deck. Note that visual feedback for this will only be shown on-screen.
+**Lado Izquierdo** (EffectUnit1):
 
-### Platters
+| Control | Función |
+|---------|---------|
+| `SHIFT + HI` | Intensidad del Efecto 1 |
+| `SHIFT + MID` | Intensidad del Efecto 2 |
+| `SHIFT + LOW` | Intensidad del Efecto 3 |
 
-Use the outer ring of the platter to nudge. Use the surface to scratch.
+**Lado Derecho** (EffectUnit2):
 
-Scratching is enabled for all decks. When slip mode is on, playback will resume as if the scratch never occurred.
+| Control | Función |
+|---------|---------|
+| `SHIFT + HI` | Intensidad del Efecto 1 |
+| `SHIFT + MID` | Intensidad del Efecto 2 |
+| `SHIFT + LOW` | Intensidad del Efecto 3 |
 
-Hold down `SHIFT` to increase speed of nudging and scratching. (Default factor is 10x)
+> **Nota:** Asegúrate de tener efectos cargados en los 3 slots de cada Effect Unit en Mixxx para que el control de intensidad funcione.
 
-### Hot cues
+### Loops
 
-Set `HOT CUE / SAMPLER` to hot cue mode.
+| Control | Función |
+|---------|---------|
+| `LOOP` | Activar / Desactivar loop de 4 beats |
+| `1/2X` | Reducir el tamaño del loop a la mitad |
+| `2X` | Duplicar el tamaño del loop |
+| Girar `AUTO LOOP` | Duplicar / Reducir tamaño del loop |
+| `SHIFT` + Girar `AUTO LOOP` | Controlar filtro QuickEffect (LP ↔ HP) |
 
-Press `1` through `4` to set or trigger cue points.
+El knob AUTO LOOP es un encoder rotativo: giro horario duplica el loop, giro antihorario lo reduce.
+Con SHIFT presionado, ajusta el filtro QuickEffect del deck (0.0 = Low-pass, 0.5 = neutro, 1.0 = High-pass) en pasos de 0.05.
 
-Press `SHIFT + 1` through `SHIFT + 4` to unset cue points.
+### Hot Cues
 
-### Beat looping
+| Control | Función |
+|---------|---------|
+| `1` a `4` | Establecer o disparar hot cue |
+| `SHIFT + 1` a `SHIFT + 4` | Borrar hot cue |
 
-- Use `LOOP` to start a 4-bar loop at the current point. Press again to exit the loop.
-- Use `1/2X` and `2X` to decrease and increase the size of the loop.
+### Samplers
 
-To get accurate in/out points, make sure Quantize mode is turned on for the deck before turning on looping.
+| Control | Función |
+|---------|---------|
+| Botones de Sampler `1` a `4` | Preescuchar Sampler global 1-4 (mantener) |
 
-### Beat loop rolls
+### Navegación y Librería
 
-Set `HOT CUE / SAMPLER` to sampler mode.
+| Control | Función |
+|---------|---------|
+| Girar `BROWSE` | Desplazarse por la lista de pistas |
+| `SHIFT` + Girar `BROWSE` | Mover foco entre paneles de la librería |
+| Presionar `BROWSE` | Maximizar / Minimizar librería |
+| `SHIFT` + Presionar `BROWSE` | Abrir carpeta / Ir al elemento |
+| `LOAD` | Cargar pista seleccionada en el deck (si no está reproduciendo) |
+| `SHIFT + LOAD` | Agregar pista al final de la cola AutoDJ |
 
-Press and hold `1` through `4` to trigger a beat loop roll:
+### Monitoreo (PFL / Headphone Cue)
 
-- `1`: 1/4 beat
-- `2`: 1/2 beat
-- `3`: 1 beat
-- `4`: 2 beats
+| Control | Función |
+|---------|---------|
+| `HEADPHONE SELECT A` | Activar / Desactivar PFL del Deck A |
+| `HEADPHONE SELECT B` | Activar / Desactivar PFL del Deck B |
 
-### Filters and levels
+### Cambio de Deck Virtual
 
-`HI`, `MID`, `LOW`, and channel faders work as expected.
+| Control | Función |
+|---------|---------|
+| `SHIFT + HEADPHONE SELECT A` | Alternar entre Deck 1 ↔ Deck 3 |
+| `SHIFT + HEADPHONE SELECT B` | Alternar entre Deck 2 ↔ Deck 4 |
 
-`SHIFT + HI` will modify the low/high pass filter for that deck.
+Al cambiar de deck se resetean los soft takeover de los faders y EQ para evitar saltos.
 
-`SHIFT + MID` will modify the channel gain for that deck.
+---
 
-### Kill switches
+## LEDs
 
-Set `HOT CUE / SAMPLER` to sampler mode.
+Los siguientes LEDs se actualizan automáticamente según el estado de Mixxx:
 
-Press and hold `SHIFT + 1` through `SHIFT + 4` to activate kills:
+| LED | Indica |
+|-----|--------|
+| `PLAY` | Estado de reproducción |
+| `CUE` | Estado de cue |
+| `SYNC` | Sincronización activada |
+| `HOT CUE 1-4` | Hot cue establecido |
+| `PFL A / B` | Monitoreo de auriculares activado |
 
-- `SHIFT + 1`: mute
-- `SHIFT + 2`: kill highs
-- `SHIFT + 3`: kill mids
-- `SHIFT + 4`: kill lows
+---
 
-### Effects
+## Configuración
 
-- Use `FX1` through `FX3` to toggle the first three effects in the chain for that deck.
-- Use `SHIFT + FX1` through `SHIFT + FX3` to toggle headphone output for the first three effects in the chain.
+Abre `Pioneer-DDJ-WeGO3-scripts.js` en un editor de texto y modifica las constantes al inicio del archivo:
 
-Note: No controls on the WeGO3 are mapped to effect modulators. To change those, use your mouse/trackpad or a separate controller.
+| Variable | Descripción | Default |
+|----------|-------------|---------|
+| `AUDIBLE_PLAY_PROTECTION` | No detener la pista si el volumen es > 0 | `false` |
+| `AUDIBLE_CUE_PROTECTION` | Protección de cue audible | `true` |
+| `ALL_SCRATCH_ON` | Scratch activado por defecto en todos los decks | `true` |
+| `JOG_WHEEL_SENSITIVITY` | Sensibilidad del jog wheel | `1.0` |
+| `JOG_WHEEL_SHIFT_FACTOR` | Factor de velocidad con Shift | `10.0` |
+| `BROWSE_KNOB_SHIFT_FACTOR` | Factor de scroll rápido con Shift | `10` |
 
-### Playlist and loading
+Al guardar el archivo, Mixxx lo recargará automáticamente.
 
-- Turn `BROWSE` to scroll through a playlist.
-- Turn `SHIFT + BROWSE` to scroll 10 rows at a time.
-- Press `LOAD` to load track into that deck (which must not be playing)
-- Press `SHIFT + BROWSE` to open/close library folder
-- Press `SHIFT + LOAD` to select prev/next library folders
+---
 
-### Headphone cueing
+## Licencia
 
-- Use `HEADPHONE SELECT A` and `HEADPHONE SELECT B` to toggle headphone cueing for that deck.
-- Use `HEADPHONE SELECT MASTER` to turn on/off inclusion of master in headphones.
-
-## Settings
-
-Open the `Pioneer-DDJ-WeGO3-scripts.js` in a text editor and cange the settings near the top of the file.
-
-When you save the file, Mixxx will reload it immediately.
-
-## TODO / Known bugs
-
-- Turn on CUE and PLAY LEDs
-- Show active deck indicator on controller using blue or red platter LEDs
-- When there's still platter movement after releasing touch, it's interpreted as ring movement.
-- allow adjustment of brake factor
-- trigger backspin if enough velocity detected during scratch
-- allow toggling FX when tapping, and temporary hold of FX when holding
-- preview track in headphones after clicking browse
-
-## License
-
-This mapping is released under the terms of the MIT license. See `LICENSE.md` for more details.
+Este mapping se distribuye bajo los términos de la licencia MIT. Ver `LICENSE.md` para más detalles.
