@@ -1,6 +1,6 @@
 # Pioneer DDJ-WeGO3 — Mixxx 映射
 
-> 🌐 [Español](README.md) · [English](README.en.md) · [Français](README.fr.md) · **中文**
+> [🇪🇸 Español](README.md) · [🇬🇧 English](README.en.md) · [🇫🇷 Français](README.fr.md) · 🇨🇳 **中文**
 
 ## 安装
 

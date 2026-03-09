@@ -1,6 +1,6 @@
 # Pioneer DDJ-WeGO3 — Mapping pour Mixxx
 
-> 🌐 [Español](README.md) · [English](README.en.md) · **Français** · [中文](README.zh.md)
+> [🇪🇸 Español](README.md) · [🇬🇧 English](README.en.md) · 🇫🇷 **Français** · [🇨🇳 中文](README.zh.md)
 
 ## Installation
 
